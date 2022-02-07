@@ -53,7 +53,7 @@
     
 <main class="form-signin">
   <form action="registrar.php" method="POST" >
-    <img class="mb-4" src="img/login.png" alt="" width="72" height="57">
+    <img class="mb-4" src="img/login.png" alt="" width="100" height="100">
     <h1 class="h3 mb-3 fw-normal">Complete el formulario para registrarse</h1>
 
     <div class="form-floating">
@@ -85,9 +85,8 @@
 </nav>
 
 
-
-
-
+    <script src="css/modo.js"></script>
+</body>
 <html>
   
 

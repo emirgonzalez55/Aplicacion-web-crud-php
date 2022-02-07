@@ -19,7 +19,7 @@
       $_SESSION['user_id'] = $results['nombre'];
       header("Location:inicio.php");
     } else {
-      $message = 'El usaurio ingresado no existe';
+      $message = '¡El usuario y/o contraseña son incorrectos!';
     }
   } 
 ?>
@@ -61,7 +61,7 @@
     
 <main class="form-signin">
   <form action="index.php" method="POST" >
-    <img class="mb-4" src="img/login.png" alt="" width="72" height="57">
+    <img class="mb-4" src="img/login.png" alt="" width="100" height="100">
     <h1 class="h3 mb-3 fw-normal">Inciar sesion</h1>
     <a href="registrar.php">Registrarse
       <br>
@@ -90,7 +90,7 @@
     
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="login.php">CPUS</a>
+    <a class="navbar-brand" href="index.php">CPUS</a>
     <ul class="navbar-nav me-auto mb-2 mb-md-0">
       </ul>
       <a  class="btn btn-primary" id="boton">Modo oscuro</a> 

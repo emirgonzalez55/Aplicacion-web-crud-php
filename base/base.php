@@ -38,23 +38,33 @@
         </li>
       </ul>
       <form class="d-flex" action="consultasmutiples.php" method="POST" >
-
         <input type="search" required name ="consulta" class="form-control me-2 Search " id="floatingInput" placeholder="Buscar">
         <button class="btn btn-outline-success buscar" type="submit">Buscar</button>>
       </form>
-      </ul>
-      </ul>
-      <li class="nav-item dropdown navbar-nav"> 
-            <a class="nav-link dropdown-toggle active "  href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">
-            <?php print_r($_SESSION['user_id']); ?></a>
-            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end " aria-labelledby="dropdown01">
-              <li><a class="dropdown-item" id="boton">Modo oscuro</a></li>
-              <li><a class="dropdown-item active" href="logout.php">Cerrar sesion</a></li>
-            </ul>
-          </li>
+      <div class="dropdown text-end">
+          <a href="" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="img/login.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end " aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item " href="#">Usuario:
+            <?php print_r($_SESSION['user_id']); ?>
+            </a></li>
+            <li><a class="dropdown-item" href="#" id="boton">Modo oscuro</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item active" href="logout.php">Cerrar sesion</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
 </nav>
+
+<div class=" lead ">
+  <footer class="py-2 lead">
+    <div class="">
+      <span class="">&copy; 2022 Emir S.A</span>
+    </div>
+  </footer>
+</div>
 
  <body>
     <script src="css/modo.js"></script>
