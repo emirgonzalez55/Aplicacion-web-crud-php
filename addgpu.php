@@ -13,7 +13,7 @@
 
 
     if ($em->execute()) {
-      $message = 'Procesador añadido correctamente';
+      $message = 'Grafica añadida correctamente';
     } else {
       $message = 'Error detectado';
     }

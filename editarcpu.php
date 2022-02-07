@@ -1,6 +1,6 @@
 <?php  
 include 'base/base.php';
-require '/bd.php';
+require 'bd.php';
 $id = $_GET['id'];
 $em = $conexion->prepare("SELECT * FROM procesadores WHERE id = ?;");
 $em->execute([$id]);
