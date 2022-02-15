@@ -5,18 +5,31 @@
   $message = ''; 
 
   if (!empty($_POST['nombre']) && !empty($_POST['password'])) {
-    $sql = "INSERT INTO usuarios (nombre, password) VALUES (:nombre, :password)";
-    $em = $conexion->prepare($sql);
+    $em = $conexion->prepare('SELECT nombre FROM usuarios WHERE nombre = :nombre');
     $em->bindParam(':nombre', $_POST['nombre']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $em->bindParam(':password', $password);
+    $em->execute();
+    $results = $em->fetch(PDO::FETCH_ASSOC); 
+    if($results == 0){ 
+      if( $_POST['password'] == $_POST['password1']){
+        $sql = "INSERT INTO usuarios (nombre, password) VALUES (:nombre, :password)";
+        $em = $conexion->prepare($sql);
+        $em->bindParam(':nombre', $_POST['nombre']);
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $em->bindParam(':password', $password);
 
     if ($em->execute()) {
-      $message = 'Usuario creado con exito';
+      $message = 'Usuario creado con exito <br>
+      <a href="index.php">Inciar sesion </a></p>';
     } else {
       $message = 'Error detectado';
     }
+  }else{
+    $message = '¡Las contraseñas no coinciden!';
   }
+ }else{
+   $message = '¡El usuario ya existe!';
+ }
+}
 ?>
 <!doctype html>
   <head>
@@ -64,13 +77,14 @@
       <input type="password" name="password" required class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Contraseña</label>
     </div>
+    <div class="form-floating">
+      <input type="password" name="password1" pattern="[A-Za-z0-9_-]{4,15}" title="Minimo 4 caracteres" required class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Repita la contraseña</label>
+    </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
     <main class="mensaje">
     <?php if(!empty($message)): ?>
-      <p> <?= $message ?>
-    <br>
-    <a href="index.php">Inciar sesion </a></p>
-    </p> 
+      <p> <?= $message ?></p>
         
     <?php endif; ?>
     <main>
