@@ -13,26 +13,22 @@ $result = $em->fetch(PDO::FETCH_OBJ);
 	<title>editar chipset</title>
 </head>
 
-<main class="form-signin text-center">
+<main class="form-hardware text-center">
   <form action="editarchipsets1.php" method="POST" >
     <img class="mb-4" src="img/cpus.png" alt="" width="100" height="80">
     <h1 class="h3 mb-3 fw-normal">Editar chipset</h1>
-    <br>
     <div class="form-floating">
-      <input type="text" required name ="marca" class="form-control"  value="<?php echo $result->marca; ?>" id="floatingInput" placeholder="">
+      <input type="text" pattern=".{1,45}" title="Maximo 45 caracteres" required name ="marca" class="form-control"  value="<?php echo $result->marca; ?>" id="floatingInput" placeholder="">
       <label for="floatingInput">Marca</label>
     </div>
-    <br>
     <div class="form-floating">
-      <input type="text" required name="modelo"class="form-control" value="<?php echo $result->modelo; ?>" id="floatingPassword" placeholder="">
+      <input type="text" pattern=".{1,45}" title="Maximo 45 caracteres" required name="modelo"class="form-control" value="<?php echo $result->modelo; ?>" id="floatingPassword" placeholder="">
       <label for="floatingPassword">Modelo</label>
     </div>
-    <br>
     <div class="form-floating">
-      <input type="number" required name="rendimiento"class="form-control" value="<?php echo $result->rendimiento; ?>" id="floatingPassword" placeholder="">
+      <input type="number"  min="1" max="100" required name="rendimiento"class="form-control" value="<?php echo $result->rendimiento; ?>" id="floatingPassword" placeholder="">
       <label for="floatingPassword">Rendimiento</label>
     </div>
-    <br>
     <button class="w-100 btn btn-lg btn-primary" name="id" value="<?php echo $result->id; ?> type="submit" >Modificar</button>
 </form>
 

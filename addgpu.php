@@ -19,31 +19,27 @@
     }
   }
 ?>
-<!doctype html>>
+<!doctype html>
 <head>
   <title>nueva gpu</title>
 </head>
     
-<main class="form-signin text-center">
+<main class="form-hardware text-center">
   <form action="addgpu.php" method="POST" >
     <img class="mb-4" src="img/cpus.png" alt="" width="100" height="80">
     <h1 class="h3 mb-3 fw-normal">Complete el formulario para añadir una targeta grafica</h1>
-    <br>
     <div class="form-floating">
-      <input type="text" required name ="marca" class="form-control" id="floatingInput" placeholder="">
+      <input type="text" pattern=".{1,45}" title="Maximo 45 caracteres" required name ="marca" class="form-control" id="floatingInput" placeholder="">
       <label for="floatingInput">Marca</label>
     </div>
-    <br>
     <div class="form-floating">
-      <input type="text" required name="modelo"class="form-control" id="floatingPassword" placeholder="">
+      <input type="text" pattern=".{1,45}" title="Maximo 45 caracteres" required name="modelo"class="form-control" id="floatingPassword" placeholder="">
       <label for="floatingPassword">Modelo</label>
     </div>
-    <br>
     <div class="form-floating">
-      <input type="number" required name="rendimiento"class="form-control" id="floatingPassword" placeholder="">
+      <input type="number" min="1" max="100" required name="rendimiento"class="form-control" id="floatingPassword" placeholder="">
       <label for="floatingPassword">Rendimiento</label>
     </div>
-    <br>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Añadir</button>
     <main class="mensaje">
     <?php if(!empty($message)): ?>
