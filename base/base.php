@@ -11,11 +11,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
   </head>
-    
+<body id="modooscuro">
+  
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="inicio.php">CPUS</a>
@@ -46,9 +46,9 @@
             <img src="img/login.png" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end " aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item " href="#">Usuario:
+            <li><button class="dropdown-item" >Usuario:
             <?php print_r($_SESSION['user_id']); ?>
-            </a></li>
+            </button></li>
             <li><button class="dropdown-item" id="boton">Modo oscuro</button></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item active" href="logout.php">Cerrar sesion</a></li>
@@ -58,17 +58,15 @@
     </div>
 </nav>
 
-<div class="lead">
-  <footer class="py-2 lead">
+<div>
+  <footer class="py-2">
     <div>
-      <span>&copy; 2022 Emir S.A</span>
+      <span>© 2022 EMIR S.A</span>
+      <span><a class="version" style="text-decoration: none" href="version.php">version 1.1.0</a></span>  
     </div>
   </footer>
 </div>
 
- <body>
-    <script src="css/modo.js"></script>
-    <script src="css/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
