@@ -49,6 +49,9 @@
     <main>
   </form>
 </main>
+<?php  
+include 'base/js.php';	
+?>
 </body>
 
 

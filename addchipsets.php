@@ -47,6 +47,9 @@
     <?php endif; ?>
     <main>
   </form>
+<?php  
+include 'base/js.php';	
+?>
 </main>
 
 </html>

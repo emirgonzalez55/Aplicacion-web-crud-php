@@ -62,7 +62,7 @@
 
     <link href="css/styles.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body class="text-center" id="modooscuro">
     
 <main class="form-signin">
   <form action="registrar.php" method="POST" >
@@ -99,7 +99,9 @@
 </nav>
 
 
-    <script src="css/modo.js"></script>
+<?php  
+include 'base/js.php';	
+?>
 </body>
 <html>
   

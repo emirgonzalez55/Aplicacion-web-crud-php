@@ -1,3 +1,18 @@
+body.modo-oscuro img {
+  filter: brightness(.8) contrast(1.2);
+}
+.modo-oscuro{
+  background-color: rgb(47, 47, 47);
+}
+body.modo-oscuro h1 {
+  color: #FDFEFE;
+}
+body.modo-oscuro p {
+  color: #FDFEFE;
+}
+body.modo-oscuro footer {
+  color: #FDFEFE;
+}
 .form-hardware input[type="text"] {
   margin-bottom: 10px;
   border-bottom-right-radius: 0;
@@ -20,18 +35,15 @@
   padding: 15px;
   margin: auto;
   padding-top: 100px;
-
 }
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
-
 .form-signin input[type="text"] {
   margin-bottom: 10px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
@@ -40,37 +52,6 @@
 /* Show it is fixed to the top */
 body {
   padding-top: 4.5rem;
-}
-body.dark-theme img {
-  filter: brightness(.8) contrast(1.2);
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-      --color-bg: rgb(47, 47, 47);
-      --color-texto: #FDFEFE;
-  }
-
-  body.light-theme {
-      --color-bg: #FDFEFE;
-      --color-texto: #17202A;
-  }
-
-  img {
-      filter: brightness(.8) contrast(1.2);
-  }
-  
-}
-
-body {
-  background-color: var(--color-bg);
-}
-
-h1 {
-  color: var(--color-texto);
-}
-.lead{
-  color: var(--color-texto)
 }
 .boton{
   display: block;
@@ -86,27 +67,9 @@ h1 {
   text-align: center;
   
 }
-.col-md-3{
-  color: var(--color-texto)
-}
-.mensaje{
-  color: var(--color-texto)
-  
-}
-.Tablas{
-  color: var(--color-texto)
-}
-.themed-styles-col {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  background-color: rgba(86, 61, 124, .15);
-  border: 1px solid rgba(86, 61, 124, .2);
-}
-.themed-estilo-col {
+.table{
   margin: auto;
   width: 50%;
-  background-color: rgba(86, 61, 124, .15);
-  border: 1px solid rgba(86, 61, 124, .2);
 }
 .Tablas {
   margin: auto;
@@ -130,7 +93,6 @@ h1 {
    width: 30%;
    margin-left: auto;
    margin-right: auto;
-
 }
 .Search{
   display: block;
@@ -138,12 +100,9 @@ h1 {
   margin-right: auto;
   width: 70%;
 }
-
 .user{
   margin: auto;
   background-color:white;
-
- 
 }
 html {
   min-height: 100%;
@@ -154,9 +113,9 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding-left: 20px;
-  border-top: 1px solid;
-
+  padding-left: 1%;
+  padding-right: 1%;
+  border-top: 1px solid
 }
 .dropdown-toggle {
   width: max-content;
@@ -167,4 +126,11 @@ footer {
 .dropdown-menu{
   width: 50%;
 }
-  
+.version{
+  text-align: right;
+  float: right;
+  max-width: max-content;
+}
+body.modo-oscuro .version {
+  color: #FDFEFE;
+}
