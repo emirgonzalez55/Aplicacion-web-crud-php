@@ -5,6 +5,22 @@ $id = $_GET['id'];
 $em = $conexion->prepare("SELECT * FROM procesadores WHERE id = ?;");
 $em->execute([$id]);
 $result = $em->fetch(PDO::FETCH_OBJ);
+
+if (isset($_POST['submit'])) {
+$id = $_POST['submit'];
+$marca = $_POST['marca'];
+$modelo = $_POST['modelo'];
+$rendimiento = $_POST['rendimiento'];
+
+$em = $conexion->prepare("UPDATE procesadores SET marca = ?, modelo = ?, rendimiento = ? WHERE id = ?;");
+$result = $em->execute([$marca,$modelo,$rendimiento, $id]);
+
+if ($result === TRUE) {
+  header('Location: procesadores.php');
+}else{
+  echo "Error";
+}
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +30,7 @@ $result = $em->fetch(PDO::FETCH_OBJ);
 </head>
 
 <main class="form-hardware text-center">
-  <form action="editarcpu1.php" method="POST" >
+  <form action="editarcpu.php" method="POST" >
     <img class="mb-4" src="img/cpus.png" alt="" width="100" height="80">
     <h1 class="h3 mb-3 fw-normal">Editar cpu</h1>
     <div class="form-floating">
@@ -29,9 +45,11 @@ $result = $em->fetch(PDO::FETCH_OBJ);
       <input type="number" min="1" max="100" required name="rendimiento"class="form-control" value="<?php echo $result->rendimiento; ?>" id="floatingPassword" placeholder="">
       <label for="floatingPassword">Rendimiento</label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" name="id" value="<?php echo $result->id; ?> type="submit" >Modificar</button>
+    <button class="w-100 btn btn-lg btn-primary" name="submit" value="<?php echo $result->id; ?> type="submit" >Modificar</button>
 
   </form>
-
+<?php  
+include 'base/js.php';	
+?>
 </body>
 </html>

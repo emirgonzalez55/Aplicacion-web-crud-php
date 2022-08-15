@@ -21,6 +21,12 @@ if (!empty($_POST['consulta'])) {
 
     if($result) {
       $message='Resultados de la busqueda.';
+      $tabla ='<tr>
+      <th>ID</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Rendimiento</th>
+      </tr>';
    } else  {
      $message='No hay resultados que coincidan con la busqueda';;
    }
@@ -35,19 +41,15 @@ if (!empty($_POST['consulta'])) {
 
   <body>
     <h1 class="Tablas">
-    <?php if(!empty($message)):  ?>
-        <?= $message ?>
-            <br>
+    <?php if(!empty($message)):?>
+      <?= $message ?><br>
     <?php endif; ?>
 
     </h1>
-		<table class='col-md-3 themed-estilo-col' style='border: solid 1px black;'>
-		<tr>
-		<th>ID</th>
-		<th>Marca</th>
-		<th>Modelo</th>
-		<th>Rendimiento</th>
-		</tr>
+		<table id="tematable" class="table table-striped table-bordered table-hover">
+    <?php if(!empty($tabla)):?>
+      <?= $tabla ?>
+    <?php endif; ?>
 		
 			<?php 
       if (is_array($result) || is_object($result)){
@@ -56,18 +58,20 @@ if (!empty($_POST['consulta'])) {
 				foreach ($result as $dato) {
 					?>
 					<tr>
-						<td class='col-md-3 themed-styles-col'><?php echo $dato->id; ?></td>
-						<td class='col-md-3 themed-styles-col'><?php echo $dato->marca; ?></td>
-						<td class='col-md-3 themed-styles-col'><?php echo $dato->modelo; ?></td>
-						<td class='col-md-3 themed-styles-col'><?php echo $dato->rendimiento; ?></td>
+						<td class='col-md-1'><?php echo $dato->id; ?></td>
+						<td class='col-md-3'><?php echo $dato->marca; ?></td>
+						<td class='col-md-3 '><?php echo $dato->modelo; ?></td>
+						<td class='col-md-3 '><?php echo $dato->rendimiento; ?></td>
 					</tr>
 					<?php
 				}
       }
 			?>
 		</table>
+<?php  
+include 'base/js.php';	
+?>
 </body>
-
 
 </html>
 
