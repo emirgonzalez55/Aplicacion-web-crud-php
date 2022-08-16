@@ -15,4 +15,5 @@ Actualización version 1.0.7 beta (1.2202151600)	Fecha: 15-02-2022<br>
 Actualización version 1.0.3 beta (1.2202062100)	Fecha: 06-02-2022<br>
 • Corrección de errores.<br>
 • Mejoras visuales.<br>
-Versión inicial version 1.0.0 beta (1.211003420)	Fecha: 03-10-2021
+Versión inicial version 1.0.0 beta (1.211003420)	Fecha: 03-10-2021<br>
+• Versión inicial
